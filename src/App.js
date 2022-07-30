@@ -20,7 +20,7 @@ ____________________________________________
 ____________________________________________
 ____________________________________________
   API's:
-  POST  - http://localhost:8181/test/php_react_crud/api/save
+  POST  - http://localhost:8181/test/php_react_crud/api/index.php
   GET   - http://localhost:8181/test/php_react_crud/api/all-users.php
   PUT  - http://localhost:8181/test/ReactCrud/phpreactcrud_app/api/update-users.php
 ____________________________________________
