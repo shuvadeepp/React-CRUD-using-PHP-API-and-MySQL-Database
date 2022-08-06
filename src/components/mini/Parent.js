@@ -10,7 +10,7 @@ export default function Parent() {
     return(
        <>
             <h1>hello parent</h1>
-            <a primary onClick={() => parentToChild()}>Click Here </a>
+            <a primary onClick={() => parentToChild()} > Click Here </a>
             <Child1 hello={data}/>
             <Child2 hello2={data}/>
        </>

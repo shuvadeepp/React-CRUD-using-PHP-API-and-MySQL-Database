@@ -23,10 +23,27 @@ export default function header() {
                     <li className="nav-item">
                         <Link className="nav-link" to="/parent"> Parent </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/add-student-file"> Add Student File </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/modals"> Modals</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/ListStudentPaginate"> View List Pagination </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/paginate"> Paginate </Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/AddMore"> Add More </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/Ckeditortest"> Ckeditor Test </Link>
+                    </li>                    
                 </ul>
-                <span className="navbar-text">
-                    PHP ReactJs Crud Application Using MySql
-                </span>
+                
                 </div>
             </div>
         </nav>

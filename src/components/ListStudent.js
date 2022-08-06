@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import EditStudent from './EditStudent';
 import { useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import ChildModal from './reactModal/ChildModal';
 
 export default function ListStudent() {
     const params = useParams()
@@ -11,14 +12,18 @@ export default function ListStudent() {
     const search = useLocation().search;
     const msg = new URLSearchParams(search).get('msg');
 
+    const [show, setShow] = useState(false);
+    const toggleShow = () => setShow(abc => !abc);
+
 
     const [student, setStudent] = useState([]);
+    const [filepath, setfilepath] = useState('http://localhost:8181/test/ReactCrud/phpreactcrud_app/api/img');
     useEffect(() =>{
         loadUser();
     },[]);
 
     const loadUser = async () => {
-        const result = await axios.get("http://localhost:8181/test/php_react_crud/api/all-users.php");
+        const result = await axios.get("http://localhost:8181/test/ReactCrud/phpreactcrud_app/api/all-users.php");
         // console.log(result.data);
         setStudent(result.data.users);
     }
@@ -40,20 +45,24 @@ export default function ListStudent() {
                             <th scope="col">Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Mobile</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">View Details</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        
                          {student.map((student, index) => (
                             <tr key={Math.random()}>
                                 <th scope="row">{index+1}</th>
                                 <td> {student.name} </td>
                                 <td> {student.email} </td>
                                 <td> {student.mobile} </td>
+                                <td> <img width="60" height="60" src ={filepath+'/'+student.fileUpload} style={{'borderRadius':'50%'}} /> </td>
+                                <td> <a className="btn btn-success" onClick={toggleShow}>View Details</a> </td>
                                 <td>
-                                    <Link to={`/edit-student/${student.id}`}> Edit</Link>
+                                    <Link to={`/edit-student-file/${student.id}`}> Edit </Link>
                                 </td>
+                                <ChildModal message="hei you" show={show} toggleShow={toggleShow} studentid={student.id} header="info" />
                             </tr>
                         ))} 
                     </tbody>

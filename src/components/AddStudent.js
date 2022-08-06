@@ -2,8 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+// alert(1111);
 export default function AddStudent() {
-
     // let history = useNavigate();
     let [errormsg, seterrormsg] = useState([]);
     const navigate = useNavigate();

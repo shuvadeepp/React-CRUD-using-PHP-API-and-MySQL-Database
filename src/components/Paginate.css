@@ -1,0 +1,40 @@
+.page-container{
+    display: flex;
+    list-style: none;
+}
+
+.page-page{
+	padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.page-disabled{
+    cursor: not-allowed;
+    
+}
+
+.page-active{
+	border: 2px solid #000;
+    font-weight: bold;
+}
+
+.page-previous{
+    padding: 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.page-break{
+    padding: 10px;
+}
+
+.page-next{
+    padding: 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+}
